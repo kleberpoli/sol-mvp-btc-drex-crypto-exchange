@@ -27,7 +27,7 @@ Below is the directory structure for this project:
 	truffle-config.js
    ```
 
-### Smart Contracts:
+## Smart Contracts:
 1. **CryptoExchange**: The main contract where users can swap between BTC and DREX.
 2. **MockDREXAPI**: A mock contract simulating the behavior of the DREX API for minting and burning Real Digital.
 
