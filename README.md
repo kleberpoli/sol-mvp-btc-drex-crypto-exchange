@@ -12,6 +12,21 @@ This project implements a simple on-chain exchange where users can swap BTC toke
 
 ## Contract Structure
 
+Below is the directory structure for this project:
+
+   ```bash
+	/contracts
+	  ├── CryptoExchange.sol
+	  ├── MockDREXAPI.sol
+	/migrations
+	  ├── 2_deploy_contracts.js
+	/test
+	  ├── exchange.js
+	.env
+	README.md
+	truffle-config.js
+   ```
+
 ### Smart Contracts:
 1. **CryptoExchange**: The main contract where users can swap between BTC and DREX.
 2. **MockDREXAPI**: A mock contract simulating the behavior of the DREX API for minting and burning Real Digital.
@@ -34,45 +49,34 @@ This project implements a simple on-chain exchange where users can swap BTC toke
 1. **Install dependencies**:
 Before using the truffle-config.js file, make sure you install the dependencies:
    ```bash
-npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
+	npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
    ```
 
-2. **Compile the contract**:
+2. **Compile the smart contracts**:
    ```bash
    truffle compile
    ```
 
-3. **Deploy the contract**: Edit your `migrations/2_deploy_contracts.js` to include:
+3. **Run the tests:**:
    ```bash
-	const MockDREXAPI = artifacts.require("MockDREXAPI");
-	const CryptoExchange = artifacts.require("CryptoExchange");
-
-	module.exports = async function(deployer) {
-		await deployer.deploy(MockDREXAPI);
-		const drexAPI = await MockDREXAPI.deployed();
-		await deployer.deploy(CryptoExchange, drexAPI.address);
-	};
+   truffle test
    ```
 
-Then run:
+4. **Deploy the contracts to a local or public Ethereum network**:
    ```bash
-	truffle migrate
+	truffle migrate --network <network_name>
    ```
 
-## Running Tests:
-   
-1. **Write Unit Tests**: Create a new test file in `test/exchange.js`.
-
-2. **Run Tests**:
+5. **(Optional) Verify the contracts on Etherscan (requires API key)**:
    ```bash
-	truffle test
+	truffle run verify Exchange Token --network <network_name>
    ```
 
 ## Future Improvements:
-
-- **API Integration:** Replace the mock contract with actual API calls to interact with DREX.
-- **Oracles:** Integrate Chainlink or other decentralized oracles to get real-time exchange rates.
-- **Liquidity Pool:** Enable liquidity providers to add funds and earn a percentage of the exchange fees.
+- Integrate real DREX APIs when they become available.
+- Add decentralized price oracles to retrieve live exchange rates.
+- Introduce a liquidity pool system for enhanced asset swaps.
+- Implement off-chain order books to support more efficient trading.
 
 ## Final Considerations:
 
