@@ -32,8 +32,9 @@ This project implements a simple on-chain exchange where users can swap BTC toke
 ### Steps to Deploy:
 
 1. **Install dependencies**:
+Before using the truffle-config.js file, make sure you install the dependencies:
    ```bash
-   npm install @openzeppelin/contracts
+npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
    ```
 
 2. **Compile the contract**:
