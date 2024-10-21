@@ -50,33 +50,33 @@ Below is the directory structure for this project:
 
 Before using the truffle-config.js file, make sure you install the dependencies:
 
-   ```bash
-	npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
-   ```
+```bash
+npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
+```
 
 2. **Compile the smart contracts**:
 
-   ```bash
-   truffle compile
-   ```
+```bash
+truffle compile
+```
 
 3. **Run the tests:**:
 
-   ```bash
-   truffle test
-   ```
+```bash
+truffle test
+```
 
 4. **Deploy the contracts to a local or public Ethereum network**:
 
-   ```bash
-	truffle migrate --network <network_name>
-   ```
+```bash
+truffle migrate --network <network_name>
+```
 
 5. **(Optional) Verify the contracts on Etherscan (requires API key)**:
 
-   ```bash
-	truffle run verify Exchange Token --network <network_name>
-   ```
+```bash
+truffle run verify Exchange Token --network <network_name>
+```
 
 ## Future Improvements:
 - Integrate real DREX APIs when they become available.
