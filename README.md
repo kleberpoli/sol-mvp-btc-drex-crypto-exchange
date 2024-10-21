@@ -47,7 +47,9 @@ Below is the directory structure for this project:
 ### Steps to Deploy:
 
 1. **Install dependencies**:
+
 Before using the truffle-config.js file, make sure you install the dependencies:
+
    ```bash
 	npm install @truffle/hdwallet-provider dotenv @openzeppelin/contracts truffle-plugin-verify
    ```
